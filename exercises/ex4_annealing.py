@@ -1,6 +1,4 @@
-"""Ejercicio 4: Recocido simulado (SA) con 2-opt: esquemas de enfriamiento.
-
-Ejecutar desde la raiz del repo:  python -m exercises.ex4_annealing
+"""Ejercicio 4 - Recocido simulado (SA) con 2-opt: python -m exercises.ex4_annealing
 """
 import csv
 import random

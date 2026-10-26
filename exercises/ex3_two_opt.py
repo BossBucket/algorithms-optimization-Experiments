@@ -1,6 +1,4 @@
-"""Ejercicio 3: 2-opt para TSP: inicio aleatorio vs. vecino mas cercano.
-
-Ejecutar desde la raiz del repo:  python -m exercises.ex3_two_opt
+"""Ejercicio 3- 2-opt para TSP: python -m exercises.ex3_two_opt
 """
 import csv
 import statistics as st

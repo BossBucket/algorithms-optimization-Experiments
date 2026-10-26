@@ -1,6 +1,4 @@
-"""Ejercicio 2: Mochila voraz: menor peso vs valor/peso.
-
-Ejecutar desde la raiz del repo:  python -m exercises.ex2_knapsack
+"""Ejercicio 2 Mochila voraz:python -m exercises.ex2_knapsack
 """
 import csv
 

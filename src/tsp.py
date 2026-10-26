@@ -90,3 +90,29 @@ def brute_force_optimal(points):
     n = len(points)
     return min(((0,) + p for p in itertools.permutations(range(1, n))),
                key=lambda t: tour_length(points, t))
+
+def held_karp_cost(points) -> float:
+    """Costo optimo exacto por programacion dinamica (Held-Karp), O(n^2 * 2^n).
+    Equivale a la fuerza bruta pero mucho mas rapido: sirve para 100 instancias."""
+    n = len(points)
+    D = [[math.dist(a, b) for b in points] for a in points]
+    INF = float("inf")
+    # dp[mask][j]: costo minimo de salir de 0, visitar el conjunto 'mask' y terminar en j
+    dp = [[INF] * n for _ in range(1 << n)]
+    dp[1][0] = 0.0
+    for mask in range(1 << n):
+        if not mask & 1:
+            continue
+        for j in range(n):
+            cur = dp[mask][j]
+            if cur == INF or not mask & (1 << j):
+                continue
+            for k in range(n):
+                if mask & (1 << k):
+                    continue
+                nm = mask | (1 << k)
+                val = cur + D[j][k]
+                if val < dp[nm][k]:
+                    dp[nm][k] = val
+    full = (1 << n) - 1
+    return min(dp[full][j] + D[j][0] for j in range(1, n))

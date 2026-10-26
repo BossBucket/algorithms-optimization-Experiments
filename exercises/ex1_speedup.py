@@ -1,3 +1,5 @@
+"""Ejercicio 1- Aceleracion paralela: python -m exercises.ex1_speedup
+"""
 import csv
 import multiprocessing as mp
 import statistics
